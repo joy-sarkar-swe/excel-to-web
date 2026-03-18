@@ -57,7 +57,8 @@ function resolveTrainingPayload(
     if (resolved) return resolved;
   }
 
-  const nested = (payload as { data?: Partial<TransportManagerTrainingRow> }).data;
+  const nested = (payload as { data?: Partial<TransportManagerTrainingRow> })
+    .data;
   if (nested && typeof nested._id === "string") {
     return nested as TransportManagerTrainingRow;
   }
